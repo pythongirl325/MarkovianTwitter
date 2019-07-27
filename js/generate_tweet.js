@@ -69,5 +69,15 @@ function generateTweet(model){
         return output;
     }
 
-    return generateText(generateTextParts(model, generateTokens(model)));
+    let tweet;
+
+    do {
+        tweet = generateText(generateTextParts(model, generateTokens(model)));
+    } while(tweet.length > 280 || tweet.length == 0);
+
+    console.log(tweet.length);
+
+    return tweet;
+
+    
 }

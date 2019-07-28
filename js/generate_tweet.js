@@ -75,9 +75,5 @@ function generateTweet(model){
         tweet = generateText(generateTextParts(model, generateTokens(model)));
     } while(tweet.length > 280 || tweet.length == 0);
 
-    console.log(tweet.length);
-
-    return tweet;
-
-    
+    return tweet;    
 }

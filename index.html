@@ -5,18 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
-    <title>Markovian Twitter</title>
+    <title>Markovian Trump Tweets</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.1/seedrandom.min.js"></script>
     <script src="js/weighted_set.js"></script>
     <script src="js/generate_tweet.js"></script>
     <script src="js/main.js"></script>
+    <template id="tweet-template">
+        <div class="tweet">
+            <img class="tweet-profile-pic" src="images/robot_trump_profile_pic.png" />
+            <div class="tweet-name-container">
+                <b>Donald M. Trump</b> <img class="nonverified" src="images/nonverified.png" /><br>
+                <span class="handle">@fakeDonaldTrump</span>
+            </div>
+            <a class="tweet-seed" title="Permalink to this tweet"><img src="images/link.png" alt="Link"></a>
+            <div class="tweet-content"></div>
+        </div>
+    </template>
+</head>
 
 <body>
-    <!-- TODO: Turn this into an infinite scrolling page instead of a generator. -->
-    <p id="trump-tweet">Loading...</p>
-    <p><a href="#" id="permalink-anchor">Permalink to this tweet</a></p>
-    <button id="new-tweet-button">New Tweet</button>
+    <h1>Markovian Trump Tweets</h1>
+    <p>Welcome to the Markovian Trump Tweet Generator! Using a straightforward artifical intelligence system and a
+        wonderful database of the president's gold nuggets from the <a href="http://trumptwitterarchive.com/">Trump
+            Twitter Archive</a>, we've strung together the juiciest bits of information to possibly hypothesize what
+        comes next for our country.</p>
+    <p>But don't get too excited; chances are, you'll just get the same nonsense you can expect from <a
+            href="https://twitter.com/realDonaldTrump">@realDonaldTrump</a>!</p>
+    <p>To learn more about Markov Chains, <a href="what-is-markov.html">Click Here</a>.</p>
+    <p class="contact">This website was made by Graham, Zach, Jackson, and Hayden - <b><a href="mailto:zsschultz14@gmail.com">Contact Us</a></b></p>
+    <div id="tweet-container"></div>
 </body>
 
 </html>

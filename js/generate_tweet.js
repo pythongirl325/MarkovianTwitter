@@ -4,6 +4,22 @@ function htmlDecode(input) {
     return doc.documentElement.textContent;
 }
 
+function make_tweet_elements(tweet_info){
+    let template = document.getElementById("tweet-template");
+
+    let clone = document.importNode(template.content, true);
+
+    let container = clone.querySelector(".tweet");
+
+    let bq = container.querySelector(".tweet-content");
+    bq.innerText = tweet_info.text;
+
+    let permalink = container.querySelector(".tweet-seed");
+    permalink.href = `s#${tweet_info.seed}`;
+
+    return container;
+}
+
 function generateTweet(model, prng){
 
     function generateTokens(model){

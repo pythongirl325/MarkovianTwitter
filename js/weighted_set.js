@@ -1,7 +1,7 @@
 "use strict";
 
-function weightedChoose(set){
-    let random_number = Math.random();
+function weightedChoose(set, prng){
+    let random_number = prng();
 
     let lower_bound = 0;
     let upper_bound = set.length;

@@ -7,12 +7,15 @@
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
     <title>Markovian Twitter</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.1/seedrandom.min.js"></script>
     <script src="js/weighted_set.js"></script>
     <script src="js/generate_tweet.js"></script>
     <script src="js/main.js"></script>
 
 <body>
+    <!-- TODO: Turn this into an infinite scrolling page instead of a generator. -->
     <p id="trump-tweet">Loading...</p>
+    <p><a href="#" id="permalink-anchor">Permalink to this tweet</a></p>
     <button id="new-tweet-button">New Tweet</button>
 </body>
 

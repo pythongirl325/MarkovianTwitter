@@ -1,6 +1,10 @@
+// From https://stackoverflow.com/a/34064434
+function htmlDecode(input) {
+    var doc = new DOMParser().parseFromString(input, "text/html");
+    return doc.documentElement.textContent;
+}
 
-
-function generateTweet(model){
+function generateTweet(model, prng){
 
     function generateTokens(model){
         let end_index = model.items.indexOf("End");
@@ -12,7 +16,7 @@ function generateTweet(model){
         while(current_symbols[current_symbols.length - 1] != end_index){
             let next_set = model.symbols[current_symbols.map(n => n.toString()).join(" ")];
 
-            let next_symbol = weightedChoose(next_set);
+            let next_symbol = weightedChoose(next_set, prng);
 
             output.push(next_symbol);
 
@@ -75,5 +79,5 @@ function generateTweet(model){
         tweet = generateText(generateTextParts(model, generateTokens(model)));
     } while(tweet.length > 280 || tweet.length == 0);
 
-    return tweet;    
+    return htmlDecode(tweet);    
 }

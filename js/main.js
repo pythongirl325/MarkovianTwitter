@@ -16,6 +16,7 @@ async function main() {
     const container = document.getElementById("tweet-container");
 
     let last_element = make_tweet_elements(tweet_generator.next().value);
+    container.innerText = "";
     container.appendChild(last_element);
 
     function recheck_tweets(){

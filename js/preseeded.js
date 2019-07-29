@@ -8,6 +8,7 @@ async function main(){
 
     let tweet_info = { text: generateTweet(trump_model, prng), seed };
 
+    container.innerText = "";
     container.appendChild(make_tweet_elements(tweet_info));
 }
 

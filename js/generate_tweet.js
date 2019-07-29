@@ -5,14 +5,16 @@ function htmlDecode(input) {
 }
 
 function make_tweet_elements(tweet_info){
+    let tweet_text = tweet_info.text;
+    tweet_text = tweet_text.replace(/#(\w+)/, '<a href="https://twitter.com/hashtag/$1" target="_blank">$&</a>');
+    tweet_text = tweet_text.replace(/@(\w+)/, '<a href="https://twitter.com/$1" target="_blank">$&</a>');
+
     let template = document.getElementById("tweet-template");
-
     let clone = document.importNode(template.content, true);
-
     let container = clone.querySelector(".tweet");
 
-    let bq = container.querySelector(".tweet-content");
-    bq.innerText = tweet_info.text;
+    let text_container = container.querySelector(".tweet-content");
+    text_container.innerHTML = tweet_text;
 
     let permalink = container.querySelector(".tweet-seed");
     permalink.href = `s#${tweet_info.seed}`;

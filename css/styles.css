@@ -78,6 +78,9 @@ footer {
     margin-right: auto;
     margin-left: auto;
     display: block;
+
+    width: 100%;
+    max-width: 390px;
 }
 
 .loading-indicator {

@@ -17,7 +17,12 @@ function make_tweet_elements(tweet_info){
     text_container.innerHTML = tweet_text;
 
     let permalink = container.querySelector(".tweet-seed");
-    permalink.href = `s#${tweet_info.seed}`;
+
+    if(tweet_info.modelKey){
+        permalink.href = `s#${tweet_info.seed}:${tweet_info.modelKey}`;
+    } else {
+        permalink.href = `s#${tweet_info.seed}`;
+    }
 
     return container;
 }
